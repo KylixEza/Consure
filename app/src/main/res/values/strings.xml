@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Consure</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_description">Let\'s get started</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="terms_and_conditions">I agree to the <font color="#FF5C5DE0">Terms &amp; Conditions</font> and <font color="#FF5C5DE0">Privacy Policy</font></string>
+    <string name="crate_account">Create Account</string>
+    <string name="or">Or</string>
+    <string name="sign_in_with_google">Sign Up with Google</string>
+    <string name="already_have_an_account">Already have an account? <font color="#FF5C5DE0">Sign In</font></string>
+    <string name="title_home">Home</string>
+    <string name="title_find_expert">Find Expert</string>
+    <string name="title_expert_talk">Expert Talk</string>
+    <string name="title_profile">Profile</string>
 </resources>
