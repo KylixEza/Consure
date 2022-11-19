@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.bccxraion.consure.features.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_expert_talk"
+        android:name="com.bccxraion.consure.features.expert_talk.ExpertTalkFragment"
+        android:label="fragment_expert_talk"
+        tools:layout="@layout/fragment_expert_talk" />
+    <fragment
+        android:id="@+id/navigation_find_expert"
+        android:name="com.bccxraion.consure.features.find_expert.FindExpertFragment"
+        android:label="fragment_find_expert"
+        tools:layout="@layout/fragment_find_expert" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.bccxraion.consure.features.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
