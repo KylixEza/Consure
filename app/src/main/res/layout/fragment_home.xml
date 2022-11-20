@@ -9,22 +9,23 @@
     <FrameLayout
         android:id="@+id/fl_header"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:translationZ="-2dp"
-        android:background="@drawable/card_view_home"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/tv_header"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        android:textSize="24sp"
-        android:text="@string/header_home"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:translationZ="-2dp"
+        android:paddingBottom="32dp"
+        android:background="@drawable/card_view_home"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            android:textSize="24sp"
+            android:text="@string/header_home"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </FrameLayout>
     
     <SearchView
         android:id="@+id/sv_home"
