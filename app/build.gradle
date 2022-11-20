@@ -111,4 +111,5 @@ dependencies {
 
     //Custom UI
     implementation 'com.github.st235:expandablebottombar:1.5.1'
+    implementation 'io.github.florent37:shapeofview:1.4.7'
 }

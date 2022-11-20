@@ -14,4 +14,9 @@
     <string name="title_find_expert">Find Expert</string>
     <string name="title_expert_talk">Expert Talk</string>
     <string name="title_profile">Profile</string>
+    <string name="header_home">Discover\nyour future in Consure</string>
+    <string name="expert_category">Expert Category</string>
+    <string name="career">Career</string>
+    <string name="competition">Competition</string>
+    <string name="scholarships">Scholarships</string>
 </resources>
