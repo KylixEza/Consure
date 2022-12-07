@@ -1,5 +1,6 @@
 package com.bccxraion.consure.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -7,6 +8,7 @@ import com.bccxraion.consure.R
 import com.bccxraion.consure.base.BaseRecyclerViewAdapter
 import com.bccxraion.consure.databinding.ItemListFindExpertBinding
 import com.bccxraion.consure.diff_callback.FindExpertCallback
+import com.bccxraion.consure.features.detail_find_expert.DetailFindExpertActivity
 import com.bccxraion.consure.model.expert.Expert
 import com.bccxraion.consure.util.Formatting
 import com.bccxraion.consure.util.Tag
@@ -36,6 +38,12 @@ class FindExpertAdapter: BaseRecyclerViewAdapter<ItemListFindExpertBinding, Expe
                     Tag.CAREER.tag -> ivTag.setImageResource(R.drawable.ic_tag_career)
                     Tag.SCHOLARSHIP.tag -> ivTag.setImageResource(R.drawable.ic_tag_scholarship)
                     Tag.COMPETITION.tag -> ivTag.setImageResource(R.drawable.ic_tag_competition)
+                }
+                
+                btnBook.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailFindExpertActivity::class.java)
+                    intent.putExtra(DetailFindExpertActivity.EXTRA_ID, data.id)
+                    itemView.context.startActivity(intent)
                 }
             }
         }

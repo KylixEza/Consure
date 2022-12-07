@@ -32,7 +32,7 @@
             app:layout_constraintStart_toEndOf="@id/iv_rating"
             app:layout_constraintTop_toTopOf="@id/iv_rating"
             app:layout_constraintBottom_toBottomOf="@id/iv_rating"
-            tools:text="4.7"/>
+            android:text="4.7"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
