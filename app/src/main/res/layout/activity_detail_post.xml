@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.detail_post.DetailPostActivity">
+
+    <include
+        android:id="@+id/include_app_bar_detail_post"
+        layout="@layout/include_base_app_bar"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp"
+        android:text="How to shape design systems culture"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/include_app_bar_detail_post"/>
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/img_fake_ava_post"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+    <ImageButton
+        android:id="@+id/ib_follow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/ic_follow_from_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_semibold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toStartOf="@id/ib_follow"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/ib_follow"
+        tools:text="UI/UX Designer Community"/>
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter"
+        android:maxLines="1"
+        android:textColor="@color/font_disable_2"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+        tools:text="Career"/>
+
+    <TextView
+        android:id="@+id/member_joined"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/font_disable_2"
+        android:textSize="12sp"
+        android:drawablePadding="4dp"
+        app:layout_constraintStart_toEndOf="@id/tv_category"
+        app:layout_constraintTop_toTopOf="@id/tv_category"
+        app:layout_constraintBottom_toBottomOf="@id/tv_category"
+        app:drawableStartCompat="@drawable/ic_profile_gray"
+        tools:text="258 Member" />
+
+    <ImageView
+        android:id="@+id/iv_picture"
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/img_fake_pict_post"
+        app:layout_constraintTop_toBottomOf="@id/member_joined"/>
+
+    <TextView
+        android:id="@+id/tv_owner_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/font_disable_2"
+        android:textSize="10sp"
+        android:text="Budi Tanrim - 22/11/2022"
+        app:layout_constraintTop_toBottomOf="@id/iv_picture"
+        app:layout_constraintStart_toStartOf="@id/iv_picture"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/inter"
+        android:textColor="#FF636262"
+        android:textSize="12sp"
+        android:text="When I led a design system effort in 2019 for Bukalapak, one of the biggest e-commerce in Indonesia, I quickly learned that design systems would not evolve without healthy culture. I also learned that…
+        \nA pattern library without any participation from the community is pretty much useless.
+        \nPursuing consistency is an inaccurate goal that fosters a wrong mindset within the team. It can create a culture where people would just use whatever exists on the system without being critical.\
+        \nA set of principle is simply meaningless if the team doesn’t practice and challenge it from time to time. In the end, principles are man-made.
+        \nFast forward to 2020, we were being intentional to design the contribution experience and significantly increased the contribution. "
+        app:layout_constraintTop_toBottomOf="@id/tv_owner_date"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

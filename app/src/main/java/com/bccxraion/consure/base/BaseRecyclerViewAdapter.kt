@@ -18,7 +18,7 @@ abstract class BaseRecyclerViewAdapter<VB: ViewBinding, ListType>
     open val binder: (ListType, VB) -> Unit = { _, _ ->}
     open val binderWithPosition: (ListType, VB, Int) -> Unit = { _, _, _ ->}
 
-    protected abstract val diffUtilBuilder: (List<ListType>, List<ListType>) -> DiffUtil.Callback
+    protected abstract val diffUtilBuilder: (List<ListType>, List<ListType>) -> DiffUtil.Callback?
 
     var position: Int? = null
     var specificItemPosition: Int = 0
@@ -26,15 +26,23 @@ abstract class BaseRecyclerViewAdapter<VB: ViewBinding, ListType>
     lateinit var itemView: View
 
     fun submitList(data: List<ListType>) {
-        val diffCallback = diffUtilBuilder(itemList, data)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-
-        itemList.apply {
-            clear()
-            addAll(data)
+        if(diffUtilBuilder != null) {
+            val diffCallback = diffUtilBuilder(itemList, data)
+            val diffResult = DiffUtil.calculateDiff(diffCallback!!)
+            itemList.apply {
+                clear()
+                addAll(data)
+            }
+            
+            diffResult.dispatchUpdatesTo(this)
+        } else {
+            itemList.apply {
+                clear()
+                addAll(data)
+            }
+            notifyDataSetChanged()
         }
-
-        diffResult.dispatchUpdatesTo(this)
+        
     }
 
     inner class BaseViewHolder(val view: VB): RecyclerView.ViewHolder(view.root) {

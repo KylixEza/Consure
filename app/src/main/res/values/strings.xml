@@ -14,7 +14,7 @@
     <string name="title_find_expert">Find Expert</string>
     <string name="title_expert_talk">Expert Talk</string>
     <string name="title_profile">Profile</string>
-    <string name="header_home">Discover\nyour future in Consure</string>
+    <string name="tagline">Discover your future in Consure</string>
     <string name="expert_category">Expert Category</string>
     <string name="career">Career</string>
     <string name="competition">Competition</string>
@@ -24,4 +24,8 @@
     <string name="forgot_password">Forgot password</string>
     <string name="remember_me">Remember Me</string>
     <string name="don_t_have_an_account">Don\'t have an account? <font color="#FF5C5DE0">Sign Up</font> </string>
+    <string name="add_profile_photo">Add profile photo</string>
+    <string name="add_photo_description">Add a profile photo to help people make a good impression on you</string>
+    <string name="add_a_photo">Add a photo</string>
+    <string name="skip">Skip</string>
 </resources>

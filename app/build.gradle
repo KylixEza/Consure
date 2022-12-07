@@ -58,6 +58,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //Lifecycle + KTX
     implementation "androidx.fragment:fragment-ktx:1.5.4"
@@ -69,6 +70,9 @@ dependencies {
     implementation "androidx.room:room-runtime:2.4.3"
     implementation "androidx.room:room-ktx:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"
+
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation "androidx.datastore:datastore:1.0.0"
 
     //Coroutine Flow
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"

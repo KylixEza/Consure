@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:src="@drawable/ic_arrow_back_24"
+        android:src="@drawable/ic_arrow_back_black_24"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,14 +163,14 @@
         app:layout_constraintTop_toTopOf="@id/cb_terms_and_conditions"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_create_account"
+        android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:padding="10dp"
         android:backgroundTint="@color/primary_100"
         android:fontFamily="@font/inter_semibold"
-        android:text="@string/crate_account"
+        android:text="@string/sign_up"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textAllCaps="false"
@@ -178,57 +178,6 @@
         app:layout_constraintStart_toStartOf="@id/til_password"
         app:layout_constraintTop_toBottomOf="@id/tv_terms_and_policy" />
 
-    <TextView
-        android:id="@+id/tv_or"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/or"
-        android:textColor="@color/font_disable_2"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@id/btn_create_account"
-        app:layout_constraintEnd_toEndOf="@id/btn_create_account"
-        app:layout_constraintTop_toBottomOf="@id/btn_create_account" />
-
-    <View
-        android:id="@+id/separator_left"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FFC4C4C4"
-        app:layout_constraintStart_toStartOf="@id/btn_create_account"
-        app:layout_constraintTop_toTopOf="@id/tv_or"
-        app:layout_constraintBottom_toBottomOf="@id/tv_or"
-        app:layout_constraintEnd_toStartOf="@id/tv_or"/>
-
-    <View
-        android:id="@+id/separator_right"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:background="#FFC4C4C4"
-        app:layout_constraintStart_toEndOf="@id/tv_or"
-        app:layout_constraintTop_toTopOf="@id/tv_or"
-        app:layout_constraintBottom_toBottomOf="@id/tv_or"
-        app:layout_constraintEnd_toEndOf="@id/btn_create_account"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_sign_up_google"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:padding="10dp"
-        android:backgroundTint="@color/primary_80"
-        android:fontFamily="@font/inter_semibold"
-        android:text="@string/sign_in_with_google"
-        android:textColor="@color/primary_100"
-        android:textSize="16sp"
-        android:textAllCaps="false"
-        app:cornerRadius="8dp"
-        app:layout_constraintStart_toStartOf="@id/btn_create_account"
-        app:layout_constraintEnd_toEndOf="@id/btn_create_account"
-        app:layout_constraintTop_toBottomOf="@id/tv_or" />
 
     <TextView
         android:id="@+id/tv_already_have_an_account"
@@ -239,9 +188,9 @@
         android:text="@string/already_have_an_account"
         android:textColor="@color/font_disable_2"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/btn_sign_up_google"
-        app:layout_constraintEnd_toEndOf="@id/btn_sign_up_google"
-        app:layout_constraintTop_toBottomOf="@id/btn_sign_up_google" />
+        app:layout_constraintStart_toStartOf="@id/btn_sign_up"
+        app:layout_constraintEnd_toEndOf="@id/btn_sign_up"
+        app:layout_constraintTop_toBottomOf="@id/btn_sign_up" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

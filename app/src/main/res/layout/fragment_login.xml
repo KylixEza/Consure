@@ -14,7 +14,7 @@
         android:layout_marginTop="12dp"
         android:clickable="true"
         android:focusable="true"
-        android:src="@drawable/ic_arrow_back_24"
+        android:src="@drawable/ic_arrow_back_black_24"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

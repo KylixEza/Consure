@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".features.book.payment_step.PaymentStepFragment">
+
+    <include
+        android:id="@+id/header_book_session"
+        layout="@layout/include_header_book_session"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_book_session_holder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="-32dp"
+        android:translationZ="-2dp"
+        android:foreground="@drawable/recycler_view_ripple"
+        app:cardCornerRadius="30dp"
+        app:shape_roundRect_topLeftRadius="30dp"
+        app:shape_roundRect_topRightRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_book_session"/>
+
+
+    <ImageView
+        android:id="@+id/iv_duration"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/img_fake_duration_pay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cv_book_session_holder"/>
+
+    <ImageView
+        android:id="@+id/iv_checkout_calculation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/img_fake_checkout_calculation"
+        app:layout_constraintTop_toBottomOf="@id/iv_duration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_payment_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Payment Method"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/iv_checkout_calculation"
+        app:layout_constraintTop_toBottomOf="@id/iv_checkout_calculation" />
+
+    <ImageView
+        android:id="@+id/iv_fake_payment_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/img_fake_payment_method"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_payment_method"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_pay_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/primary_100"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="8dp"
+        android:text="Pay now"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/iv_fake_payment_method"
+        app:layout_constraintTop_toBottomOf="@id/iv_fake_payment_method" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IDR 71.000"
+        android:textColor="@color/font_active"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/tv_payment_method"
+        app:layout_constraintTop_toTopOf="@id/btn_pay_now"
+        app:layout_constraintBottom_toBottomOf="@id/btn_pay_now"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.tag.TagActivity">
+
+    <include
+        android:id="@+id/include_app_bar_tag"
+        layout="@layout/include_base_app_bar"/>
+
+    <TextView
+        android:id="@+id/tv_experts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="18sp"
+        android:textColor="@color/font_active"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/include_app_bar_tag"
+        tools:text="Career Experts"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_experts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@id/tv_experts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_experts"/>
+
+    <TextView
+        android:id="@+id/tv_posts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/inter_medium"
+        android:textColor="@color/font_active"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/rv_experts"
+        app:layout_constraintTop_toBottomOf="@id/rv_experts"
+        tools:text="Career Post"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_posts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_posts"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

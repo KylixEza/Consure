@@ -12,8 +12,11 @@
         android:gravity="center"
         android:layout_weight="1">
         <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:id="@+id/iv_career"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:clickable="true"
+            android:focusable="true"
             android:src="@drawable/ic_career"/>
 
         <TextView
@@ -34,8 +37,11 @@
         android:gravity="center"
         android:layout_weight="1">
         <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:id="@+id/iv_competition"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:clickable="true"
+            android:focusable="true"
             android:src="@drawable/ic_competition"/>
 
         <TextView
@@ -56,8 +62,11 @@
         android:gravity="center"
         android:layout_weight="1">
         <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:id="@+id/iv_scholarship"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:clickable="true"
+            android:focusable="true"
             android:src="@drawable/ic_scholarship"/>
 
         <TextView

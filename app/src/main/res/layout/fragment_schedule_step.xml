@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".features.book.schedule_step.ScheduleStepFragment">
+
+    <include
+        android:id="@+id/header_book_session"
+        layout="@layout/include_header_book_session"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_schedule_holder"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="-32dp"
+        android:translationZ="-2dp"
+        android:foreground="@drawable/recycler_view_ripple"
+        app:cardCornerRadius="30dp"
+        app:shape_roundRect_topLeftRadius="30dp"
+        app:shape_roundRect_topRightRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_book_session"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_package_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="@color/primary_80"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintTop_toTopOf="@id/cv_schedule_holder"
+        app:layout_constraintStart_toStartOf="@id/cv_schedule_holder">
+
+        <TextView
+            android:id="@+id/tv_package"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paket Reguler"
+            android:fontFamily="@font/inter_medium"
+            android:textSize="11sp"
+            android:textColor="@color/primary_100"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        app:civ_border_width="1dp"
+        app:civ_border_color="#373752"
+        app:layout_constraintStart_toStartOf="@id/cv_package_holder"
+        app:layout_constraintTop_toBottomOf="@id/cv_package_holder"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="14sp"
+        android:textColor="#373752"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar"
+        tools:text="Belinda Azzahra"/>
+
+    <include
+        android:id="@+id/include_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        layout="@layout/include_tag_2"
+        app:layout_constraintStart_toStartOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"/>
+
+    <include
+        android:id="@+id/include_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        layout="@layout/include_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_name"/>
+
+    <ImageView
+        android:id="@+id/iv_fake_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="32dp"
+        android:src="@drawable/img_fake_schedule"
+        app:layout_constraintTop_toBottomOf="@id/include_tag"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginHorizontal="32dp"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:text="Next"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

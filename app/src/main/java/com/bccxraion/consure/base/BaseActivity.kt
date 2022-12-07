@@ -1,12 +1,16 @@
 package com.bccxraion.consure.base
 
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.bccxraion.consure.util.ScreenOrientation
 import com.bccxraion.consure.validator.ConstraintValidator
+
 
 abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity() {
 
@@ -24,7 +28,12 @@ abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = inflateViewBinding()
         setContentView(binding.root)
-
+        
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
+    
         val screenOrientation = determineScreenOrientation()
 
         requestedOrientation = if(screenOrientation != null) {
