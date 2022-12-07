@@ -84,6 +84,8 @@
         android:fontFamily="@font/inter"
         android:textSize="13sp"
         android:textColor="@color/font_secondary"
+        android:maxLines="2"
+        android:ellipsize="end"
         app:layout_constraintTop_toTopOf="@id/iv_experience"
         app:layout_constraintStart_toEndOf="@id/iv_experience"
         app:layout_constraintEnd_toEndOf="@id/tv_rating"
