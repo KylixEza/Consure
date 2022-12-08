@@ -25,6 +25,7 @@ class UpcomingSessionAdapter: BaseRecyclerViewAdapter<ItemListUpcomingSessionBin
             binding.apply {
                 Glide.with(itemView.context)
                     .load(data.expert.linkImage)
+                    .centerCrop()
                     .into(binding.ivAvatar)
                 tvName.text = data.expert.name
                 tvTag.text = data.expert.tag

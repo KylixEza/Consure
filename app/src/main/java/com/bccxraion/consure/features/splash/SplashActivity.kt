@@ -23,9 +23,17 @@ class SplashActivity : AppCompatActivity() {
             lifecycleScope.launchWhenStarted {
                 viewModel.getToken().collect {
                     if (it != null) {
-                        val intent = Intent(this@SplashActivity, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
+                        lifecycleScope.launchWhenStarted {
+                            viewModel.isRememberMe().collect { isRememberMe ->
+                                if (isRememberMe) {
+                                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                                    finish()
+                                } else {
+                                    startActivity(Intent(this@SplashActivity, AuthActivity::class.java))
+                                    finish()
+                                }
+                            }
+                        }
                     } else {
                         val intent = Intent(this@SplashActivity, AuthActivity::class.java)
                         startActivity(intent)
