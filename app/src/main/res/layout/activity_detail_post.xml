@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toStartOf="@id/ib_follow"
         app:layout_constraintStart_toEndOf="@id/iv_avatar"
         app:layout_constraintTop_toTopOf="@id/ib_follow"
-        tools:text="UI/UX Designer Community"/>
+        android:text="UI/UX Designer Community"/>
 
     <TextView
         android:id="@+id/tv_category"
@@ -70,7 +70,7 @@
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@id/iv_avatar"
         app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
-        tools:text="Career"/>
+        android:text="Career"/>
 
     <TextView
         android:id="@+id/member_joined"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="@id/tv_category"
         app:layout_constraintBottom_toBottomOf="@id/tv_category"
         app:drawableStartCompat="@drawable/ic_profile_gray"
-        tools:text="258 Member" />
+        android:text="258 Member" />
 
     <ImageView
         android:id="@+id/iv_picture"

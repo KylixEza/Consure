@@ -2,12 +2,14 @@ package com.bccxraion.consure.features.auth.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import com.bccxraion.consure.data.source.local.datastore.ConsureDataStore
 import com.bccxraion.consure.data.source.remote.api.service.ApiService
 import com.bccxraion.consure.data.util.Resource
 import com.bccxraion.consure.model.user.UserBody
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 
 class LoginViewModel(
     private val apiService: ApiService,
@@ -26,5 +28,9 @@ class LoginViewModel(
        emit(Resource.Error(it.message.toString()))
     }.flowOn(Dispatchers.IO)
         .asLiveData()
+    
+    fun savePrefRememberMe(isRememberMe: Boolean) = viewModelScope.launch {
+        dataStore.saveIsRememberMe(isRememberMe)
+    }
     
 }

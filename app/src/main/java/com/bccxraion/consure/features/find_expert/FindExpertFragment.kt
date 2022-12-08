@@ -2,6 +2,7 @@ package com.bccxraion.consure.features.find_expert
 
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bccxraion.consure.adapter.FindExpertAdapter
 import com.bccxraion.consure.base.BaseFragment
@@ -90,6 +91,10 @@ class FindExpertFragment : BaseFragment<FragmentFindExpertBinding>() {
     
     private fun isAllChipNotChecked() : Boolean {
         return binding?.chipAll?.isChecked == false && binding?.chipCareer?.isChecked == false && binding?.chipCompetition?.isChecked == false && binding?.chipScholarship?.isChecked == false
+    }
+    
+    override fun onBackPressedBehaviour() {
+        view?.findNavController()?.navigate(FindExpertFragmentDirections.actionNavigationFindExpertToNavigationHome())
     }
     
 }

@@ -9,20 +9,84 @@
         android:id="@+id/navigation_home"
         android:name="com.bccxraion.consure.features.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_tagFragment"
+            app:destination="@id/tagFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_expert_talk"
         android:name="com.bccxraion.consure.features.expert_talk.ExpertTalkFragment"
         android:label="fragment_expert_talk"
-        tools:layout="@layout/fragment_expert_talk" />
+        tools:layout="@layout/fragment_expert_talk" >
+        <action
+            android:id="@+id/action_navigation_expert_talk_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_find_expert"
         android:name="com.bccxraion.consure.features.find_expert.FindExpertFragment"
         android:label="fragment_find_expert"
-        tools:layout="@layout/fragment_find_expert" />
+        tools:layout="@layout/fragment_find_expert" >
+        <action
+            android:id="@+id/action_navigation_find_expert_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.bccxraion.consure.features.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_profile_to_bookingHistoryFragment"
+            app:destination="@id/bookingHistoryFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_savedPostFragment"
+            app:destination="@id/savedPostFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tagFragment"
+        android:name="com.bccxraion.consure.features.tag.TagFragment"
+        android:label="fragment_tag"
+        tools:layout="@layout/fragment_tag" >
+        <action
+            android:id="@+id/action_tagFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <argument
+            android:name="tag"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingHistoryFragment"
+        android:name="com.bccxraion.consure.features.booking_history.BookingHistoryFragment"
+        android:label="fragment_booking_history"
+        tools:layout="@layout/fragment_booking_history" >
+        <action
+            android:id="@+id/action_bookingHistoryFragment_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedPostFragment"
+        android:name="com.bccxraion.consure.features.saved_post.SavedPostFragment"
+        android:label="fragment_saved_post"
+        tools:layout="@layout/fragment_saved_post" >
+        <action
+            android:id="@+id/action_savedPostFragment_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.bccxraion.consure.features.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_notificationFragment_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
 </navigation>

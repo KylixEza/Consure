@@ -8,6 +8,8 @@
     <color name="font_disable">#FFCECDD4</color>
     <color name="font_disable_2">#FFA5A5A5</color>
 
+    <color name="green">#FF0FA958</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorSeparator">#FFE4E4E4</color>

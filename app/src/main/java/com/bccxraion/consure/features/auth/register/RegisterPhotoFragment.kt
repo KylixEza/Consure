@@ -1,32 +1,29 @@
 package com.bccxraion.consure.features.auth.register
 
-import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
+import android.content.Intent
 import android.view.ViewGroup
-import com.bccxraion.consure.R
+import com.bccxraion.consure.base.BaseFragment
+import com.bccxraion.consure.databinding.FragmentRegisterPhotoBinding
+import com.bccxraion.consure.features.main.MainActivity
+import com.bccxraion.consure.util.ScreenOrientation
 
-class RegisterPhotoFragment : Fragment() {
+class RegisterPhotoFragment : BaseFragment<FragmentRegisterPhotoBinding>() {
     
-    companion object {
-        fun newInstance() = RegisterPhotoFragment()
+    override fun inflateViewBinding(container: ViewGroup?): FragmentRegisterPhotoBinding {
+        return FragmentRegisterPhotoBinding.inflate(layoutInflater, container, false)
     }
     
-    private lateinit var viewModel: RegisterPhotoViewModel
-    
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_register_photo, container, false)
+    override fun FragmentRegisterPhotoBinding.binder() {
+        tvSkip.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
     }
     
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RegisterPhotoViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+    override fun determineScreenOrientation(): ScreenOrientation = ScreenOrientation.PORTRAIT
     
+    override fun onBackPressedBehaviour() {
+        activity?.finish()
+    }
 }

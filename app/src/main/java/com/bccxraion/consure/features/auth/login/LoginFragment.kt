@@ -34,6 +34,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             viewModel.signIn(userBody).observe(viewLifecycleOwner) {
                 when (it) {
                     is Resource.Success -> {
+                        viewModel.savePrefRememberMe(cbRememberMe.isChecked)
                         val intent = Intent(requireContext(), MainActivity::class.java)
                         startActivity(intent)
                         activity?.finish()

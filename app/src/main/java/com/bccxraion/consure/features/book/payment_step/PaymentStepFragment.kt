@@ -29,8 +29,8 @@ class PaymentStepFragment : BaseFragment<FragmentPaymentStepBinding>() {
         btnPayNow.setOnClickListener {
             val transactionBody = TransactionBody(
                 "Paket Reguler",
-                "Sabtu 17/11/2022 16:30",
-                70000,
+                "Saturday 17/12/2022 16:30",
+                35000,
                 2,
                 Constanta.CURRENT_EXPERT_ID.toInt()
             )

@@ -2,6 +2,7 @@ package com.bccxraion.consure.data.source.remote.api.service
 
 import com.bccxraion.consure.model.BaseResponse
 import com.bccxraion.consure.model.expert.Expert
+import com.bccxraion.consure.model.history.History
 import com.bccxraion.consure.model.token.Token
 import com.bccxraion.consure.model.transaction.TransactionBody
 import com.bccxraion.consure.model.user.UserBody
@@ -47,5 +48,11 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Body body: TransactionBody
     ): BaseResponse<String?>
+    
+    @GET("/transaction/history")
+    suspend fun fetchHistory(
+        @Header("Authorization") token: String,
+        @Query("status") status: String
+    ): BaseResponse<List<History>>
     
 }

@@ -2,6 +2,7 @@ package com.bccxraion.consure.features.home
 
 import android.content.Intent
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bccxraion.consure.adapter.PostAdapter
 import com.bccxraion.consure.adapter.TopExpertAdapter
@@ -37,20 +38,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         includeExpertCategoryHome.apply {
             val intent = Intent(requireContext(), TagActivity::class.java)
             ivCareer.setOnClickListener {
-                intent.putExtra(TagActivity.EXTRA_TAG, Tag.CAREER.tag)
-                startActivity(intent)
+                view?.findNavController()?.navigate(HomeFragmentDirections.actionNavigationHomeToTagFragment(Tag.CAREER.tag))
             }
             ivScholarship.setOnClickListener {
-                intent.putExtra(TagActivity.EXTRA_TAG, Tag.SCHOLARSHIP.tag)
-                startActivity(intent)
+                view?.findNavController()?.navigate(HomeFragmentDirections.actionNavigationHomeToTagFragment(Tag.SCHOLARSHIP.tag))
             }
             ivCompetition.setOnClickListener {
-                intent.putExtra(TagActivity.EXTRA_TAG, Tag.COMPETITION.tag)
-                startActivity(intent)
+                view?.findNavController()?.navigate(HomeFragmentDirections.actionNavigationHomeToTagFragment(Tag.COMPETITION.tag))
             }
         }
     }
     
     override fun determineScreenOrientation(): ScreenOrientation = ScreenOrientation.PORTRAIT
     
+    override fun onBackPressedBehaviour() {
+        requireActivity().finish()
+    }
 }

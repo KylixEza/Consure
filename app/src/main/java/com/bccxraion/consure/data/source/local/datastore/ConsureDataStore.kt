@@ -20,6 +20,23 @@ class ConsureDataStore(private val context: Context) {
         }
     }
     
+    suspend fun saveIsRememberMe(isRememberMe: Boolean) {
+        context.userPreferenceDataStore.edit {
+            it[DataStoreUtil.IS_REMEMBER_ME_PREF_KEY] = isRememberMe
+        }
+    }
+    
+    suspend fun deleteToken() {
+        context.userPreferenceDataStore.edit {
+            it.remove(DataStoreUtil.TOKEN_PREF_KEY)
+        }
+    }
+    
+    fun readIsRememberMe() = context.userPreferenceDataStore.data
+        .map {
+            it[DataStoreUtil.IS_REMEMBER_ME_PREF_KEY] ?: false
+        }
+    
     fun readToken(): Flow<String?> = context.userPreferenceDataStore.data
         .map {
             it[DataStoreUtil.TOKEN_PREF_KEY]

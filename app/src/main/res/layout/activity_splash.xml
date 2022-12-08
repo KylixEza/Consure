@@ -4,7 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_splash_screen"
+    android:background="@color/primary_80"
     tools:context=".features.splash.SplashActivity">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        android:src="@drawable/ic_consure_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_bold"
+        android:layout_marginTop="24dp"
+        android:textSize="34sp"
+        android:textColor="@color/primary_100"
+        android:text="@string/app_name"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

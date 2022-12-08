@@ -10,227 +10,243 @@
         android:id="@+id/include_app_bar_profile"
         layout="@layout/include_app_bar_profile"/>
     
-    <ImageView
-        android:id="@+id/iv_avatar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/include_app_bar_profile"/>
-
-    <TextView
-        android:id="@+id/tv_welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/inter_medium"
-        android:textColor="@color/font_disable_2"
-        android:textSize="13sp"
-        android:text="Welcome!"
-        app:layout_constraintStart_toEndOf="@id/iv_avatar"
-        app:layout_constraintTop_toTopOf="@id/iv_avatar" />
-
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/inter_semibold"
-        android:textSize="16sp"
-        android:textColor="@color/font_active"
-        app:layout_constraintTop_toBottomOf="@id/tv_welcome"
-        app:layout_constraintStart_toStartOf="@id/tv_welcome"
-        tools:text="Hello World"/>
-
-    <ImageView
-        android:id="@+id/iv_edit_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:src="@drawable/ic_edit_profile"
-        app:layout_constraintTop_toTopOf="@id/iv_avatar"
-        app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <View
-        android:id="@+id/separator_1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="28dp"
-        android:background="#FFE4E4E4"
-        app:layout_constraintTop_toBottomOf="@id/iv_avatar"/>
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/include_app_bar_profile"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:id="@+id/tv_upcoming_session"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Upcoming Session"
-        android:fontFamily="@font/inter_semibold"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/separator_1"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_upcoming_session"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_upcoming_session"/>
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-    <View
-        android:id="@+id/separator_2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="#FFE4E4E4"
-        app:layout_constraintTop_toBottomOf="@id/rv_upcoming_session"/>
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/font_disable_2"
+                android:textSize="13sp"
+                android:text="Welcome!"
+                app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                app:layout_constraintTop_toTopOf="@id/iv_avatar" />
 
-    <ImageView
-        android:id="@+id/iv_profile_notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ic_profile_notification"
-        app:layout_constraintTop_toBottomOf="@id/separator_2"
-        app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="16sp"
+                android:textColor="@color/font_active"
+                app:layout_constraintTop_toBottomOf="@id/tv_welcome"
+                app:layout_constraintStart_toStartOf="@id/tv_welcome"
+                tools:text="Hello World"/>
 
-    <TextView
-        android:id="@+id/tv_profile_notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notification"
-        android:layout_marginStart="12dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/inter_medium"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/iv_profile_notification"
-        app:layout_constraintTop_toTopOf="@id/iv_profile_notification"
-        app:layout_constraintBottom_toBottomOf="@id/iv_profile_notification"/>
+            <ImageView
+                android:id="@+id/iv_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_edit_profile"
+                app:layout_constraintTop_toTopOf="@id/iv_avatar"
+                app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ImageView
-        android:id="@+id/iv_forward_profile_notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="24dp"
-        android:src="@drawable/ic_forward_gray_24"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintTop_toTopOf="@id/tv_profile_notification"
-        app:layout_constraintBottom_toBottomOf="@id/tv_profile_notification"/>
+            <View
+                android:id="@+id/separator_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="28dp"
+                android:background="#FFE4E4E4"
+                app:layout_constraintTop_toBottomOf="@id/iv_avatar"/>
 
-    <ImageView
-        android:id="@+id/iv_profile_booking_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_profile_booking_history"
-        app:layout_constraintTop_toBottomOf="@id/iv_profile_notification"
-        app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/tv_upcoming_session"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Upcoming Session"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator_1"/>
 
-    <TextView
-        android:id="@+id/tv_profile_booking_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Booking History"
-        android:layout_marginStart="12dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/inter_medium"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/iv_profile_booking_history"
-        app:layout_constraintTop_toTopOf="@id/iv_profile_booking_history"
-        app:layout_constraintBottom_toBottomOf="@id/iv_profile_booking_history"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_upcoming_session"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_upcoming_session"/>
 
-    <ImageView
-        android:id="@+id/iv_forward_profile_booking_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="24dp"
-        android:src="@drawable/ic_forward_gray_24"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintTop_toTopOf="@id/tv_profile_booking_history"
-        app:layout_constraintBottom_toBottomOf="@id/tv_profile_booking_history"/>
+            <View
+                android:id="@+id/separator_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#FFE4E4E4"
+                app:layout_constraintTop_toBottomOf="@id/rv_upcoming_session"/>
 
-    <ImageView
-        android:id="@+id/iv_profile_saved"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_profile_saved"
-        app:layout_constraintTop_toBottomOf="@id/iv_profile_booking_history"
-        app:layout_constraintStart_toStartOf="parent"/>
+            <ImageView
+                android:id="@+id/iv_profile_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_profile_notification"
+                app:layout_constraintTop_toBottomOf="@id/separator_2"
+                app:layout_constraintStart_toStartOf="parent"/>
 
-    <TextView
-        android:id="@+id/tv_profile_saved"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Saved"
-        android:layout_marginStart="12dp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/inter_medium"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/iv_profile_saved"
-        app:layout_constraintTop_toTopOf="@id/iv_profile_saved"
-        app:layout_constraintBottom_toBottomOf="@id/iv_profile_saved"/>
+            <TextView
+                android:id="@+id/tv_profile_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_profile_notification"
+                app:layout_constraintTop_toTopOf="@id/iv_profile_notification"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profile_notification"/>
 
-    <ImageView
-        android:id="@+id/iv_forward_profile_saved"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="24dp"
-        android:src="@drawable/ic_forward_gray_24"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintTop_toTopOf="@id/tv_profile_saved"
-        app:layout_constraintBottom_toBottomOf="@id/tv_profile_saved"/>
+            <ImageView
+                android:id="@+id/iv_forward_profile_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_forward_gray_24"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toTopOf="@id/tv_profile_notification"
+                app:layout_constraintBottom_toBottomOf="@id/tv_profile_notification"/>
 
-    <View
-        android:id="@+id/separator_3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="24dp"
-        android:background="#FFE4E4E4"
-        app:layout_constraintTop_toBottomOf="@id/iv_profile_saved"/>
+            <ImageView
+                android:id="@+id/iv_profile_booking_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_profile_booking_history"
+                app:layout_constraintTop_toBottomOf="@id/iv_profile_notification"
+                app:layout_constraintStart_toStartOf="parent"/>
 
-    <TextView
-        android:id="@+id/tv_profile_switch_to_expert_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Switch to Expert Account"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:textColor="@color/primary_100"
-        android:fontFamily="@font/inter"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@id/separator_3"
-        app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/tv_profile_booking_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Booking History"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_profile_booking_history"
+                app:layout_constraintTop_toTopOf="@id/iv_profile_booking_history"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profile_booking_history"/>
 
-    <TextView
-        android:id="@+id/tv_profile_log_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/font_active"
-        android:fontFamily="@font/inter"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@id/tv_profile_switch_to_expert_account"
-        app:layout_constraintStart_toStartOf="parent"/>
+            <ImageView
+                android:id="@+id/iv_forward_profile_booking_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_forward_gray_24"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toTopOf="@id/tv_profile_booking_history"
+                app:layout_constraintBottom_toBottomOf="@id/tv_profile_booking_history"/>
+
+            <ImageView
+                android:id="@+id/iv_profile_saved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_profile_saved"
+                app:layout_constraintTop_toBottomOf="@id/iv_profile_booking_history"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_profile_saved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saved"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_profile_saved"
+                app:layout_constraintTop_toTopOf="@id/iv_profile_saved"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profile_saved"/>
+
+            <ImageView
+                android:id="@+id/iv_forward_profile_saved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_forward_gray_24"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toTopOf="@id/tv_profile_saved"
+                app:layout_constraintBottom_toBottomOf="@id/tv_profile_saved"/>
+
+            <View
+                android:id="@+id/separator_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="#FFE4E4E4"
+                app:layout_constraintTop_toBottomOf="@id/iv_profile_saved"/>
+
+            <TextView
+                android:id="@+id/tv_profile_switch_to_expert_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Switch to Expert Account"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/primary_100"
+                android:fontFamily="@font/inter"
+                android:textSize="17sp"
+                app:layout_constraintTop_toBottomOf="@id/separator_3"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_profile_log_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/font_active"
+                android:fontFamily="@font/inter"
+                android:textSize="17sp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_switch_to_expert_account"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
