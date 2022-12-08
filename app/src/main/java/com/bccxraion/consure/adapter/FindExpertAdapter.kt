@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import com.bccxraion.consure.R
 import com.bccxraion.consure.base.BaseRecyclerViewAdapter
 import com.bccxraion.consure.databinding.ItemListFindExpertBinding
-import com.bccxraion.consure.diff_callback.FindExpertCallback
+import com.bccxraion.consure.diff_callback.FindExpertDiffCallback
 import com.bccxraion.consure.features.detail_find_expert.DetailFindExpertActivity
 import com.bccxraion.consure.model.expert.Expert
 import com.bccxraion.consure.util.Formatting
@@ -49,5 +49,5 @@ class FindExpertAdapter: BaseRecyclerViewAdapter<ItemListFindExpertBinding, Expe
         }
     
     override val diffUtilBuilder: (List<Expert>, List<Expert>) -> DiffUtil.Callback?
-        get() = { old, new -> FindExpertCallback(old, new) }
+        get() = { old, new -> FindExpertDiffCallback(old, new) }
 }

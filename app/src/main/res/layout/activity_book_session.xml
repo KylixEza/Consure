@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".features.book.BookSessionActivity">
 
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_book_session"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.bccxraion.consure.features.book.package_step.PackageStepFragment"
+        tools:layout="@layout/fragment_package_step" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

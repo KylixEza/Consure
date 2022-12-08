@@ -3,7 +3,9 @@ package com.bccxraion.consure.data.source.remote.api.service
 import com.bccxraion.consure.model.BaseResponse
 import com.bccxraion.consure.model.expert.Expert
 import com.bccxraion.consure.model.token.Token
+import com.bccxraion.consure.model.transaction.TransactionBody
 import com.bccxraion.consure.model.user.UserBody
+import com.bccxraion.consure.model.user.UserResponse
 import retrofit2.http.*
 
 interface ApiService {
@@ -17,6 +19,11 @@ interface ApiService {
     suspend fun signIn(
         @Body body: UserBody,
     ): BaseResponse<Token>
+    
+    @GET("/user/profile")
+    suspend fun getProfile(
+        @Header("Authorization") token: String,
+    ): BaseResponse<UserResponse>
     
     @GET("/expert/all")
     suspend fun fetchAllExperts(
@@ -34,5 +41,11 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Path("id") id: String
     ): BaseResponse<Expert>
+    
+    @POST("/transaction")
+    suspend fun createTransaction(
+        @Header("Authorization") token: String,
+        @Body body: TransactionBody
+    ): BaseResponse<String?>
     
 }

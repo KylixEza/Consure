@@ -18,7 +18,7 @@ class LoginViewModel(
         val response = apiService.signIn(body)
         if (response.isSuccess) {
             emit(Resource.Success(Unit))
-            response.body.token.let { dataStore.saveToken(it) }
+            response.body?.token.let { dataStore.saveToken(it ?: "") }
         } else {
            emit(Resource.Error(response.message))
         }

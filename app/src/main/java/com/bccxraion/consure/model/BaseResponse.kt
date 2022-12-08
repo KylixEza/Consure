@@ -10,7 +10,7 @@ data class BaseResponse<T> (
     val message: String,
     
     @field:SerializedName("body")
-    val body: T,
+    val body: T?,
     
     @field:SerializedName("status_code")
     val statusCode: Int

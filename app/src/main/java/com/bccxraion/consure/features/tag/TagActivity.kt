@@ -2,6 +2,7 @@ package com.bccxraion.consure.features.tag
 
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bccxraion.consure.adapter.PostAdapter
 import com.bccxraion.consure.adapter.TopExpertAdapter
 import com.bccxraion.consure.base.BaseActivity
 import com.bccxraion.consure.data.source.dummy.Dummy
@@ -29,13 +30,19 @@ class TagActivity : BaseActivity<ActivityTagBinding>() {
         tvPosts.text = "$tag Posts"
         
         val topExpertAdapter = TopExpertAdapter()
+        val postAdapter = PostAdapter()
         
         rvExperts.apply {
             adapter = topExpertAdapter
             layoutManager = LinearLayoutManager(this@TagActivity, LinearLayoutManager.HORIZONTAL, false)
         }
         
-        topExpertAdapter.submitList(Dummy.getFakeTopExperts().filter { it.first == tag }.map { it.second })
+        rvPosts.apply {
+            adapter = postAdapter
+            layoutManager = LinearLayoutManager(this@TagActivity, LinearLayoutManager.VERTICAL, false)
+        }
         
+        postAdapter.submitList(Dummy.getDummyPost().filter { it.first == tag }.map { it.second })
+        topExpertAdapter.submitList(Dummy.getFakeTopExperts().filter { it.first == tag }.map { it.second })
     }
 }

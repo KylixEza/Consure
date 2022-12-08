@@ -3,6 +3,7 @@ package com.bccxraion.consure.features.home
 import android.content.Intent
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bccxraion.consure.adapter.PostAdapter
 import com.bccxraion.consure.adapter.TopExpertAdapter
 import com.bccxraion.consure.base.BaseFragment
 import com.bccxraion.consure.data.source.dummy.Dummy
@@ -18,12 +19,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     
     override fun FragmentHomeBinding.binder() {
         val topExpertsAdapter = TopExpertAdapter()
+        val postAdapter = PostAdapter()
         
         rvTopExpertsForYou.apply {
             adapter = topExpertsAdapter
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
         
+        rvPost.apply {
+            adapter = postAdapter
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        }
+        
+        postAdapter.submitList(Dummy.getDummyPost().map { it.second })
         topExpertsAdapter.submitList(Dummy.getFakeTopExperts().map { it.second }.take(2))
         
         includeExpertCategoryHome.apply {

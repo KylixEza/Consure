@@ -1,9 +1,11 @@
 package com.bccxraion.consure.features.detail_find_expert
 
+import android.content.Intent
 import android.widget.Toast
 import com.bccxraion.consure.base.BaseActivity
 import com.bccxraion.consure.data.util.Resource
 import com.bccxraion.consure.databinding.ActivityDetailFindExpertBinding
+import com.bccxraion.consure.features.book.BookSessionActivity
 import com.bccxraion.consure.util.ScreenOrientation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -43,6 +45,13 @@ class DetailFindExpertActivity : BaseActivity<ActivityDetailFindExpertBinding>()
                     tvDetailExperience.text = it.data?.experience
                 }
             }
+        }
+        
+        btnBook.setOnClickListener {
+            val intent = Intent(this@DetailFindExpertActivity, BookSessionActivity::class.java)
+            intent.putExtra(BookSessionActivity.EXTRA_ID, id)
+            startActivity(intent)
+            finish()
         }
     }
     
